@@ -1,0 +1,31 @@
+.add-button{
+    position: fixed; /*El boton queda "flotante" encima del contenido*/
+    bottom: 30px; /*Desde abajo*/
+    right: 30px; /*Desde la derecha*/
+    background-color: darkgreen; /*Color del fondo del boton*/
+    border-radius: 50%; /*Hacemos redondo al boton*/
+
+    width: 70px;
+    height: 70px /*Tamaño del boton para que queda simetrico*/;
+    border: none; /*Quitar borde*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /*Sombra del boton*/
+
+    display: flex; /*Activamos Flexbox*/
+    justify-content: center; /*Alineacion horizontal*/
+    align-items: center; /*Alineacion vertical*/
+    z-index: 1001; /*Para que el boton quede encima de todo*/
+
+    transition: transform 0.4s; /*Duracion de la animacion*/   
+}
+
+.add-button:hover{
+    transform: scale(1.2);
+}
+
+.tabla-scroll{
+    overflow-y: auto; /*Scroll horizontal*/
+}
+
+button{
+    margin: 1px; /*Separacion entre los botones*/
+}
