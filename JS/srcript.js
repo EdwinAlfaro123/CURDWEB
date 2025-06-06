@@ -32,7 +32,7 @@ function MostrarDatos(data){
                 <td>${integrante.Correo}</td>
                 <td>
                     <button>Editar</buton>
-                    <button>Eliminar</button>
+                    <button onclick="EliminarPersonas(${integrante.id})">Eliminar</button>
                 </td>
             </tr>
         `;
@@ -58,8 +58,7 @@ btnCerrar.addEventListener("click", ()=>{
 })
 
 //Agregar nuevo integrante desde el formulario
-document.getElementById("frmAgregar").addEventListener("submit", async e => {
-    e.preventDefault(); //"e" representa a "submit". Evita que el formulario se envie de un solo
+document.getElementById("frmAgregar").addEventListener("submit", async e => {e.preventDefault(); //"e" representa a "submit". Evita que el formulario se envie de un solo
 
     //Capturar los valores del formulario
     const Nombre = document.getElementById("txtNombre").value.trim();
@@ -95,5 +94,24 @@ document.getElementById("frmAgregar").addEventListener("submit", async e => {
     else{
         //En caso de que la API devuelva un codigo diferente a 200-299
         alert("El registro no pudo ser agregado");
-        }
+    }
+
 });
+
+
+//Funcion para borrar registros
+async function EliminarPersonas(id){
+    const confirmacion = confirm("¿Realmente deseas eliminar el registro?");
+    
+    //Validamos si el usuario si escogio borrar
+    if(confirmacion){
+        await fetch(`${API_URL}/${id}`, {
+            method: "DELETE",
+        });
+
+        //Recargar la tabla despues de eliminar
+        ObtenerIntegrantes();
+    }else{
+
+    }
+}
