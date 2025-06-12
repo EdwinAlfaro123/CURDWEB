@@ -139,14 +139,14 @@ document.getElementById("frmModificar").addEventListener("submit", async e => {
     e.preventDefault() //Evita que el formulario se envie
 
     //Capturamos los valores de los input
-    const id = getElementById("txtIdEditar").value
-    const Nombre = getElementById("txtNombreModificar").value
-    const Apellido = getElementById("txtApellidoModificar").value
-    const Correo = getElementById("txtEmailModificar").value
+    const id = document.getElementById("txtIdEditar").value
+    const Nombre = document.getElementById("txtNombreModificar").value
+    const Apellido = document.getElementById("txtApellidoModificar").value
+    const Correo = document.getElementById("txtEmailModificar").value
 
     //Validaciones de las constantes
     if(!id || !Nombre || !Apellido || !Correo){
-        alert("Complete todos los campos, TONTO")
+        alert("Complete todos los campos")
         return //Evita que el codigo se diga ejecutando
     }
 
