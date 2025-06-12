@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css">
     <link rel="stylesheet" href="CSS/style.css">
     <title>Sistema de Gestion de Equipo Expo</title>
 </head>
@@ -57,6 +57,25 @@
                 <input type="text" id="txtNombre" placeholder="Nombre" required>
                 <input type="text" id="txtApellido" placeholder="Apellido" required>
                 <input type="email" id="txtEmail" placeholder="Correo Electronico" required>
+
+                <button type="submit" class="contrast">Guardar</button>
+            </form>
+        </article>
+    </dialog>
+
+
+    <!--Cuadro de dialogo para editar-->
+    <dialog id="mdModificar">
+        <article>
+            <header>
+                <a href="#" class="close" id="btnCerrarModificar"></a>
+                <h3>Modificar Integrante</h3>
+            </header>
+            <form id="frmModificar">
+                <input type="hidden" id="txtIdEditar"> <!--Campo oculto para guardar el ID-->
+                <input type="text" id="txtNombreModificar" placeholder="Nombre" required>
+                <input type="text" id="txtApellidoModificar" placeholder="Apellido" required>
+                <input type="email" id="txtEmailModificar" placeholder="Correo Electronico" required>
 
                 <button type="submit" class="contrast">Guardar</button>
             </form>
